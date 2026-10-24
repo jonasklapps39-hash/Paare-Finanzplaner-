@@ -10,11 +10,11 @@
     <string name="action_add_expense">Ausgabe</string>
     <string name="action_settings">Einstellungen</string>
     <string name="action_back">Zurück</string>
+    <string name="action_retry">Erneut versuchen</string>
+    <string name="household_load_failed">Euer Haushalt konnte nicht geladen werden. Bitte prüfe deine Internetverbindung.</string>
+    <string name="household_not_configured">Supabase ist noch nicht eingerichtet. Trage SUPABASE_URL und SUPABASE_ANON_KEY in local.properties ein.</string>
     <string name="add_expense_coming_soon">Ausgaben erfassen kommt im nächsten Schritt.</string>
 
-    <string name="overview_greeting">Hallo!</string>
-    <string name="overview_empty_title">Richtet euren Haushalt ein</string>
-    <string name="overview_empty_message">Leg einen gemeinsamen Haushalt an und lade deinen Partner oder deine Partnerin ein. Danach seht ihr hier euren Monat auf einen Blick.</string>
     <string name="expenses_empty_title">Noch keine Ausgaben</string>
     <string name="expenses_empty_message">Tippe auf „+ Ausgabe“, um eure erste gemeinsame Ausgabe zu erfassen.</string>
     <string name="budgets_empty_title">Keine Budgets</string>

@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.Logout
 import androidx.compose.material3.Card
@@ -24,21 +26,33 @@ import de.paarfinanz.app.BuildConfig
 import de.paarfinanz.app.R
 import de.paarfinanz.core.ui.components.PartnerAvatar
 import de.paarfinanz.core.ui.theme.PaarfinanzTheme
+import de.paarfinanz.feature.household.settings.HouseholdSettingsSection
 
 @Composable
-fun SettingsRoute(viewModel: SettingsViewModel = hiltViewModel()) {
+fun SettingsRoute(
+    onInvite: () -> Unit,
+    onEditIncome: () -> Unit,
+    viewModel: SettingsViewModel = hiltViewModel(),
+) {
     val email by viewModel.email.collectAsStateWithLifecycle()
-    SettingsScreen(email = email, onSignOut = viewModel::signOut)
+    SettingsScreen(
+        email = email,
+        onSignOut = viewModel::signOut,
+        householdSection = { HouseholdSettingsSection(onEditIncome = onEditIncome, onInvite = onInvite) },
+    )
 }
 
 @Composable
-fun SettingsScreen(email: String?, onSignOut: () -> Unit) {
+fun SettingsScreen(email: String?, onSignOut: () -> Unit, householdSection: @Composable () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .verticalScroll(rememberScrollState())
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
+        householdSection()
+
         Text(
             text = stringResource(R.string.settings_account),
             style = MaterialTheme.typography.titleSmall,

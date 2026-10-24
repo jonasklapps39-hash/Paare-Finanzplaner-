@@ -28,3 +28,8 @@ enum class TopLevelDestination(
 }
 
 const val SETTINGS_ROUTE = "settings"
+const val INVITE_ROUTE = "invite"
+const val INCOME_ROUTE = "income"
+
+/** Womit die Hauptansicht startet – nach dem Onboarding direkt mit dem nächsten Schritt. */
+enum class MainStart { OVERVIEW, INVITE, INCOME }

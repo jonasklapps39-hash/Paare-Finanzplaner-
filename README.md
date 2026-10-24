@@ -10,7 +10,7 @@ Der vollständige Produktplan steht in [`docs/PLAN.md`](docs/PLAN.md).
 | Phase | Inhalt | Status |
 |------:|--------|--------|
 | 1 | Fundament: Projektstruktur, Theme, Supabase-Schema + RLS, Login | ✅ |
-| 2 | Haushalt anlegen, Partner einladen, Einkommen hinterlegen | ⏳ |
+| 2 | Haushalt anlegen, Partner einladen (Code, Link, QR), Einkommen hinterlegen | ✅ |
 | 3 | Ausgaben, Aufteilung, Saldo & Ausgleich | ⏳ |
 | 4 | Kategorien, Budgets, Fixkosten | ⏳ |
 | 5 | Dashboard, Statistiken, Gemeinschaftskonto, private Ausgaben, Sparziele | ⏳ |
@@ -24,6 +24,7 @@ core/domain/    Reine Kotlin-Logik: Geldbeträge, faire Aufteilung (ohne Android
 core/data/      Supabase-Anbindung (Auth, Postgrest, Realtime), Repositories
 core/ui/        Theme (Material 3, Partnerfarben, Dark Mode) und gemeinsame Komponenten
 feature/auth/   Anmeldung & Registrierung (E-Mail, optional Google)
+feature/household/  Onboarding, Einladen/Beitreten, Einkommen, Haushalts-Einstellungen
 supabase/       Datenbank-Migrationen, Sicherheitsregeln (RLS) und deren Tests
 ```
 

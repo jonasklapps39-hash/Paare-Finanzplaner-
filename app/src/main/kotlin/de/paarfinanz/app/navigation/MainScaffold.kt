@@ -19,9 +19,14 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination.Companion.hierarchy
@@ -36,18 +41,27 @@ import de.paarfinanz.app.ui.home.ExpensesScreen
 import de.paarfinanz.app.ui.home.GoalsScreen
 import de.paarfinanz.app.ui.home.OverviewScreen
 import de.paarfinanz.app.ui.settings.SettingsRoute
+import de.paarfinanz.feature.household.income.IncomeRoute
+import de.paarfinanz.feature.household.invite.InviteRoute
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScaffold() {
+fun MainScaffold(start: MainStart = MainStart.OVERVIEW, onStartHandled: () -> Unit = {}) {
     val navController = rememberNavController()
+    // Über rememberUpdatedState, damit der NavHost-Graph nicht bei jeder Änderung neu entsteht.
+    val currentStart by rememberUpdatedState(start)
+    val currentOnStartHandled by rememberUpdatedState(onStartHandled)
+    var startHandled by rememberSaveable { mutableStateOf(false) }
+
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = backStackEntry?.destination
     val currentTab = TopLevelDestination.entries.firstOrNull { tab ->
         currentDestination?.hierarchy?.any { it.route == tab.route } == true
     }
     val isSettings = currentDestination?.route == SETTINGS_ROUTE
+    // Einladen und Einkommen bringen eine eigene Kopfzeile mit.
+    val isFullScreen = currentDestination?.route in setOf(INVITE_ROUTE, INCOME_ROUTE)
 
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
@@ -55,7 +69,7 @@ fun MainScaffold() {
 
     Scaffold(
         topBar = {
-            TopAppBar(
+            if (!isFullScreen) TopAppBar(
                 title = {
                     Text(
                         text = when {
@@ -83,7 +97,7 @@ fun MainScaffold() {
             )
         },
         bottomBar = {
-            if (!isSettings) {
+            if (!isSettings && !isFullScreen) {
                 NavigationBar {
                     TopLevelDestination.entries.forEach { tab ->
                         val selected = tab == currentTab
@@ -125,11 +139,44 @@ fun MainScaffold() {
             startDestination = TopLevelDestination.OVERVIEW.route,
             modifier = Modifier.padding(padding),
         ) {
-            composable(TopLevelDestination.OVERVIEW.route) { OverviewScreen() }
+            composable(TopLevelDestination.OVERVIEW.route) {
+                // Nach dem Onboarding: über der Übersicht direkt den nächsten Schritt öffnen.
+                LaunchedEffect(Unit) {
+                    if (startHandled) return@LaunchedEffect
+                    startHandled = true
+                    when (currentStart) {
+                        MainStart.OVERVIEW -> Unit
+                        MainStart.INVITE -> navController.navigate(INVITE_ROUTE)
+                        MainStart.INCOME -> navController.navigate(INCOME_ROUTE)
+                    }
+                    currentOnStartHandled()
+                }
+                OverviewScreen(
+                    onInvite = { navController.navigate(INVITE_ROUTE) },
+                    onEditIncome = { navController.navigate(INCOME_ROUTE) },
+                )
+            }
             composable(TopLevelDestination.EXPENSES.route) { ExpensesScreen() }
             composable(TopLevelDestination.BUDGETS.route) { BudgetsScreen() }
             composable(TopLevelDestination.GOALS.route) { GoalsScreen() }
-            composable(SETTINGS_ROUTE) { SettingsRoute() }
+            composable(SETTINGS_ROUTE) {
+                SettingsRoute(
+                    onInvite = { navController.navigate(INVITE_ROUTE) },
+                    onEditIncome = { navController.navigate(INCOME_ROUTE) },
+                )
+            }
+            composable(INVITE_ROUTE) {
+                InviteRoute(
+                    onBack = { navController.popBackStack() },
+                    onDone = { navController.popBackStack() },
+                )
+            }
+            composable(INCOME_ROUTE) {
+                IncomeRoute(
+                    onBack = { navController.popBackStack() },
+                    onDone = { navController.popBackStack() },
+                )
+            }
         }
     }
 }

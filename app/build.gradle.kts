@@ -57,6 +57,7 @@ dependencies {
     implementation(project(":core:data"))
     implementation(project(":core:ui"))
     implementation(project(":feature:auth"))
+    implementation(project(":feature:household"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.activity.compose)
