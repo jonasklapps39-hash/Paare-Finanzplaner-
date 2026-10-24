@@ -9,14 +9,19 @@ plugins {
     alias(libs.plugins.ksp)
 }
 
-// Zugangsdaten kommen aus local.properties oder Umgebungsvariablen, nie aus dem Repo.
-val localProperties = Properties().apply {
-    val file = rootProject.file("local.properties")
+// Verbindungsdaten: local.properties > Umgebungsvariablen > eingecheckte supabase.properties
+// (öffentliche Projekt-URL und anon-Key; geschützt wird über Row Level Security).
+fun loadProperties(fileName: String) = Properties().apply {
+    val file = rootProject.file(fileName)
     if (file.exists()) file.inputStream().use { load(it) }
 }
 
+val localProperties = loadProperties("local.properties")
+val projectProperties = loadProperties("supabase.properties")
+
 fun secret(name: String): String =
-    (localProperties.getProperty(name) ?: System.getenv(name) ?: "").replace("\"", "")
+    (localProperties.getProperty(name) ?: System.getenv(name) ?: projectProperties.getProperty(name) ?: "")
+        .replace("\"", "")
 
 android {
     namespace = "de.paarfinanz.core.data"

@@ -2,7 +2,7 @@
 # local.properties wird nicht eingecheckt.
 sdk.dir=/pfad/zu/Android/sdk
 
-# Supabase-Projekt (Dashboard → Project Settings → API)
+# Optional: anderes Supabase-Projekt als das in supabase.properties (Dashboard → Project Settings → API)
 SUPABASE_URL=https://xxxxxxxxxxxx.supabase.co
 SUPABASE_ANON_KEY=eyJhbGciOi...
 

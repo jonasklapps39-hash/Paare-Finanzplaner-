@@ -50,13 +50,13 @@ Rundungsreste werden deterministisch verteilt, sodass beide Teile immer exakt de
 ### 2. App
 
 1. Android Studio (aktuelle stabile Version) und JDK 17.
-2. `local.properties.example` nach `local.properties` kopieren und `SUPABASE_URL` sowie
-   `SUPABASE_ANON_KEY` eintragen (Dashboard → Project Settings → API).
+2. Die App ist über `supabase.properties` bereits mit dem Projekt „Paarfinanz“ (Frankfurt) verbunden.
+   Für ein eigenes Projekt `SUPABASE_URL` und `SUPABASE_ANON_KEY` in `local.properties` eintragen
+   (Vorlage: `local.properties.example`); diese Werte haben Vorrang.
 3. Optional für „Weiter mit Google“: OAuth-Client (Typ *Web*) in der Google Cloud Console anlegen,
    als `GOOGLE_WEB_CLIENT_ID` eintragen und den Google-Provider in Supabase aktivieren.
 4. Starten: `./gradlew installDebug` oder über Android Studio.
 
-Ohne Zugangsdaten startet die App trotzdem und zeigt auf dem Login-Screen einen Hinweis.
 
 ## Tests
 
