@@ -110,3 +110,11 @@ select tests.expect_error(format('select * from public.preview_household_invite(
 reset role;
 
 \echo 'Onboarding-Tests bestanden.'
+
+-- Härtung: Hilfsfunktionen sind für Anonyme nicht aufrufbar -------------------------
+set role anon;
+select tests.expect_error(format('select public.is_household_member(%L)', :'hh'), 'Anonym keine Hilfsfunktionen');
+select tests.expect_error('select public.handle_new_user()', 'Trigger-Funktion nicht direkt aufrufbar');
+reset role;
+
+\echo 'Härtungs-Tests bestanden.'
