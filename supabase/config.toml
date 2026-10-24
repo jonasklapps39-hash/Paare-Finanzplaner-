@@ -1,0 +1,14 @@
+# Lokale Supabase-Konfiguration (supabase start / supabase db push).
+project_id = "paarfinanz"
+
+[db]
+major_version = 15
+
+[auth]
+site_url = "paarfinanz://login"
+additional_redirect_urls = ["paarfinanz://login"]
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+enable_confirmations = true

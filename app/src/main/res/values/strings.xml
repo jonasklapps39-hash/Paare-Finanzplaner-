@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Paarfinanz</string>
+
+    <string name="tab_overview">Übersicht</string>
+    <string name="tab_expenses">Ausgaben</string>
+    <string name="tab_budgets">Budgets</string>
+    <string name="tab_goals">Ziele</string>
+
+    <string name="action_add_expense">Ausgabe</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_back">Zurück</string>
+    <string name="add_expense_coming_soon">Ausgaben erfassen kommt im nächsten Schritt.</string>
+
+    <string name="overview_greeting">Hallo!</string>
+    <string name="overview_empty_title">Richtet euren Haushalt ein</string>
+    <string name="overview_empty_message">Leg einen gemeinsamen Haushalt an und lade deinen Partner oder deine Partnerin ein. Danach seht ihr hier euren Monat auf einen Blick.</string>
+    <string name="expenses_empty_title">Noch keine Ausgaben</string>
+    <string name="expenses_empty_message">Tippe auf „+ Ausgabe“, um eure erste gemeinsame Ausgabe zu erfassen.</string>
+    <string name="budgets_empty_title">Keine Budgets</string>
+    <string name="budgets_empty_message">Lege Monatsbudgets pro Kategorie fest – wir sagen euch Bescheid, bevor es knapp wird.</string>
+    <string name="goals_empty_title">Keine Sparziele</string>
+    <string name="goals_empty_message">Urlaub, Notgroschen oder neues Sofa: Spart gemeinsam und fair auf eure Ziele.</string>
+
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_account">Konto</string>
+    <string name="settings_sign_out">Abmelden</string>
+    <string name="settings_version">Version %1$s</string>
+</resources>

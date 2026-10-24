@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="auth_tagline">Gemeinsam Geld managen – fair und entspannt.</string>
+    <string name="auth_title_sign_in">Willkommen zurück</string>
+    <string name="auth_title_sign_up">Konto erstellen</string>
+    <string name="auth_name">Dein Vorname</string>
+    <string name="auth_email">E-Mail</string>
+    <string name="auth_password">Passwort</string>
+    <string name="auth_password_hint">Mindestens 8 Zeichen</string>
+    <string name="auth_show_password">Passwort anzeigen</string>
+    <string name="auth_hide_password">Passwort verbergen</string>
+    <string name="auth_action_sign_in">Anmelden</string>
+    <string name="auth_action_sign_up">Registrieren</string>
+    <string name="auth_action_google">Weiter mit Google</string>
+    <string name="auth_switch_to_sign_up">Noch kein Konto? Registrieren</string>
+    <string name="auth_switch_to_sign_in">Schon ein Konto? Anmelden</string>
+    <string name="auth_forgot_password">Passwort vergessen?</string>
+    <string name="auth_or">oder</string>
+    <string name="auth_confirm_email">Fast geschafft! Wir haben dir eine E-Mail geschickt. Bestätige deine Adresse und melde dich dann an.</string>
+    <string name="auth_reset_sent">Falls ein Konto existiert, haben wir dir einen Link zum Zurücksetzen geschickt.</string>
+    <string name="auth_not_configured">Supabase ist noch nicht eingerichtet. Trage SUPABASE_URL und SUPABASE_ANON_KEY in local.properties ein.</string>
+    <string name="auth_error_invalid_email">Bitte gib eine gültige E-Mail-Adresse ein.</string>
+    <string name="auth_error_short_password">Das Passwort muss mindestens 8 Zeichen haben.</string>
+    <string name="auth_error_missing_name">Wie dürfen wir dich nennen?</string>
+    <string name="auth_error_invalid_credentials">E-Mail oder Passwort stimmen nicht.</string>
+    <string name="auth_error_email_not_confirmed">Bitte bestätige zuerst deine E-Mail-Adresse.</string>
+    <string name="auth_error_user_exists">Zu dieser E-Mail gibt es bereits ein Konto.</string>
+    <string name="auth_error_weak_password">Dieses Passwort ist zu schwach.</string>
+    <string name="auth_error_rate_limited">Zu viele Versuche. Bitte warte kurz.</string>
+    <string name="auth_error_network">Keine Verbindung. Bitte prüfe dein Internet.</string>
+    <string name="auth_error_google">Anmeldung mit Google fehlgeschlagen.</string>
+    <string name="auth_error_unknown">Etwas ist schiefgelaufen. Bitte versuche es erneut.</string>
+</resources>
