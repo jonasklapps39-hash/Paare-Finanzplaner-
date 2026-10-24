@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== App ===== -->
+    <string name="app_name">Paarfinanz</string>
+    <string name="tab_overview">Übersicht</string>
+    <string name="tab_expenses">Ausgaben</string>
+    <string name="tab_budgets">Budgets</string>
+    <string name="tab_goals">Ziele</string>
+    <string name="action_add_expense">Ausgabe</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_back">Zurück</string>
+    <string name="action_retry">Erneut versuchen</string>
+    <string name="household_load_failed">Euer Haushalt konnte nicht geladen werden. Bitte prüfe deine Internetverbindung.</string>
+    <string name="household_not_configured">Supabase ist noch nicht eingerichtet. Trage SUPABASE_URL und SUPABASE_ANON_KEY in local.properties ein.</string>
+    <string name="add_expense_coming_soon">Ausgaben erfassen kommt im nächsten Schritt.</string>
+    <string name="expenses_empty_title">Noch keine Ausgaben</string>
+    <string name="expenses_empty_message">Tippe auf „+ Ausgabe“, um eure erste gemeinsame Ausgabe zu erfassen.</string>
+    <string name="budgets_empty_title">Keine Budgets</string>
+    <string name="budgets_empty_message">Lege Monatsbudgets pro Kategorie fest – wir sagen euch Bescheid, bevor es knapp wird.</string>
+    <string name="goals_empty_title">Keine Sparziele</string>
+    <string name="goals_empty_message">Urlaub, Notgroschen oder neues Sofa: Spart gemeinsam und fair auf eure Ziele.</string>
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_account">Konto</string>
+    <string name="settings_sign_out">Abmelden</string>
+    <string name="settings_version">Version %1$s</string>
+
+    <!-- ===== Anmeldung ===== -->
+    <string name="auth_tagline">Gemeinsam Geld managen – fair und entspannt.</string>
+    <string name="auth_title_sign_in">Willkommen zurück</string>
+    <string name="auth_title_sign_up">Konto erstellen</string>
+    <string name="auth_name">Dein Vorname</string>
+    <string name="auth_email">E-Mail</string>
+    <string name="auth_password">Passwort</string>
+    <string name="auth_password_hint">Mindestens 8 Zeichen</string>
+    <string name="auth_show_password">Passwort anzeigen</string>
+    <string name="auth_hide_password">Passwort verbergen</string>
+    <string name="auth_action_sign_in">Anmelden</string>
+    <string name="auth_action_sign_up">Registrieren</string>
+    <string name="auth_action_google">Weiter mit Google</string>
+    <string name="auth_switch_to_sign_up">Noch kein Konto? Registrieren</string>
+    <string name="auth_switch_to_sign_in">Schon ein Konto? Anmelden</string>
+    <string name="auth_forgot_password">Passwort vergessen?</string>
+    <string name="auth_or">oder</string>
+    <string name="auth_confirm_email">Fast geschafft! Wir haben dir eine E-Mail geschickt. Bestätige deine Adresse und melde dich dann an.</string>
+    <string name="auth_reset_sent">Falls ein Konto existiert, haben wir dir einen Link zum Zurücksetzen geschickt.</string>
+    <string name="auth_not_configured">Supabase ist noch nicht eingerichtet. Trage SUPABASE_URL und SUPABASE_ANON_KEY in local.properties ein.</string>
+    <string name="auth_error_invalid_email">Bitte gib eine gültige E-Mail-Adresse ein.</string>
+    <string name="auth_error_short_password">Das Passwort muss mindestens 8 Zeichen haben.</string>
+    <string name="auth_error_missing_name">Wie dürfen wir dich nennen?</string>
+    <string name="auth_error_invalid_credentials">E-Mail oder Passwort stimmen nicht.</string>
+    <string name="auth_error_email_not_confirmed">Bitte bestätige zuerst deine E-Mail-Adresse.</string>
+    <string name="auth_error_user_exists">Zu dieser E-Mail gibt es bereits ein Konto.</string>
+    <string name="auth_error_weak_password">Dieses Passwort ist zu schwach.</string>
+    <string name="auth_error_rate_limited">Zu viele Versuche. Bitte warte kurz.</string>
+    <string name="auth_error_network">Keine Verbindung. Bitte prüfe dein Internet.</string>
+    <string name="auth_error_google">Anmeldung mit Google fehlgeschlagen.</string>
+    <string name="auth_error_unknown">Etwas ist schiefgelaufen. Bitte versuche es erneut.</string>
+
+    <!-- ===== Haushalt ===== -->
+    <!-- Willkommen -->
+    <string name="welcome_title">Euer gemeinsamer Haushalt</string>
+    <string name="welcome_message">Hier landen eure gemeinsamen Ausgaben – fair aufgeteilt, so wie es für euch passt. Einer legt den Haushalt an, der andere tritt per Einladung bei.</string>
+    <string name="welcome_create">Haushalt erstellen</string>
+    <string name="welcome_join">Ich habe eine Einladung</string>
+    <!-- Erstellen -->
+    <string name="create_title">Haushalt erstellen</string>
+    <string name="create_name_label">Name eures Haushalts</string>
+    <string name="create_name_placeholder">z. B. Anna &amp; Ben</string>
+    <string name="create_split_title">Wie teilt ihr gemeinsame Ausgaben auf?</string>
+    <string name="create_split_hint">Das ist nur der Standard. Ihr könnt es jederzeit ändern – auch pro Kategorie oder einzelner Ausgabe.</string>
+    <string name="create_action">Haushalt erstellen</string>
+    <string name="create_error_name">Gib eurem Haushalt einen Namen.</string>
+    <string name="split_income_title">Nach Einkommen</string>
+    <string name="split_income_description">Wer mehr verdient, trägt mehr. Zum Beispiel 60/40 bei 3.000 € und 2.000 € netto.</string>
+    <string name="split_equal_title">50/50</string>
+    <string name="split_equal_description">Alles wird halbe-halbe geteilt. Einfach und klar.</string>
+    <string name="split_fixed_title">Fester Anteil</string>
+    <string name="split_fixed_description">Ihr legt einen festen Prozentsatz fest, z. B. 70/30.</string>
+    <!-- Beitreten -->
+    <string name="join_title">Haushalt beitreten</string>
+    <string name="join_message">Gib den Code ein, den dein Partner oder deine Partnerin dir geschickt hat, oder scanne den QR-Code auf dem anderen Handy.</string>
+    <string name="join_code_label">Einladungscode</string>
+    <string name="join_scan">QR-Code scannen</string>
+    <string name="join_check">Code prüfen</string>
+    <string name="join_preview">%1$s lädt dich zu „%2$s“ ein.</string>
+    <string name="join_preview_anonymous">Du wurdest zu „%1$s“ eingeladen.</string>
+    <string name="join_accept">Beitreten</string>
+    <string name="join_error_format">Der Code hat 8 Zeichen, z. B. AB12-CD34.</string>
+    <string name="join_error_scan">Der QR-Code ist keine Paarfinanz-Einladung.</string>
+    <!-- Einladen -->
+    <string name="invite_title">Partner einladen</string>
+    <string name="invite_message">Zeig deinem Partner oder deiner Partnerin den QR-Code oder schick den Code. Er ist 7 Tage gültig.</string>
+    <string name="invite_share">Code teilen</string>
+    <string name="invite_new_code">Neuen Code erzeugen</string>
+    <string name="invite_waiting">Warte auf deinen Partner …</string>
+    <string name="invite_joined">%1$s ist beigetreten!</string>
+    <string name="invite_joined_fallback">Dein Partner ist beigetreten!</string>
+    <string name="invite_continue">Weiter</string>
+    <string name="invite_later">Später einladen</string>
+    <string name="invite_share_text">Lass uns unsere gemeinsamen Finanzen mit Paarfinanz planen! Öffne die App, tippe auf „Ich habe eine Einladung“ und gib diesen Code ein: %1$s</string>
+    <string name="invite_share_chooser">Einladung teilen</string>
+    <string name="invite_qr_description">QR-Code mit deinem Einladungscode</string>
+    <!-- Einkommen -->
+    <string name="income_title">Euer Einkommen</string>
+    <string name="income_message">Damit die App fair nach Einkommen aufteilen kann. Ihr seht beide eure Angaben.</string>
+    <string name="income_net_label">Dein Nettoeinkommen pro Monat</string>
+    <string name="income_fixed_label">Private Fixkosten pro Monat (optional)</string>
+    <string name="income_fixed_hint">Kosten nur für dich, z. B. Kredit, Unterhalt oder Handyvertrag. Zählt nur, wenn ihr nach frei verfügbarem Einkommen aufteilt.</string>
+    <string name="income_valid_from">Gilt ab</string>
+    <string name="income_previous_month">Vorheriger Monat</string>
+    <string name="income_next_month">Nächster Monat</string>
+    <string name="income_save">Speichern</string>
+    <string name="income_skip">Später</string>
+    <string name="income_error_amount">Bitte gib einen gültigen Betrag ein, z. B. 2.450,50.</string>
+    <string name="income_partner">%1$s: %2$s netto</string>
+    <string name="income_partner_missing">%1$s hat noch kein Einkommen eingetragen.</string>
+    <string name="income_preview_title">Euer Verhältnis</string>
+    <string name="income_preview_waiting">Sobald ihr beide euer Einkommen eingetragen habt, seht ihr hier euer faires Verhältnis.</string>
+    <!-- Übersicht -->
+    <string name="overview_split_income">Aufteilung nach Einkommen</string>
+    <string name="overview_split_equal">Aufteilung 50/50</string>
+    <string name="overview_split_fixed">Fester Anteil</string>
+    <string name="overview_split_fallback">Noch 50/50 – es fehlen Einkommensangaben.</string>
+    <string name="overview_setup_title">Fast fertig</string>
+    <string name="overview_setup_invite">Partner einladen</string>
+    <string name="overview_setup_income">Einkommen eintragen</string>
+    <string name="overview_alone">Nur du bisher</string>
+    <string name="me">Du</string>
+    <string name="partner_fallback">Partner</string>
+    <!-- Einstellungen -->
+    <string name="settings_household">Haushalt</string>
+    <string name="settings_household_name">Name</string>
+    <string name="settings_rename">Haushalt umbenennen</string>
+    <string name="settings_save">Speichern</string>
+    <string name="settings_cancel">Abbrechen</string>
+    <string name="settings_default_split">Standard-Aufteilung</string>
+    <string name="settings_fairness">Einkommen zählt als</string>
+    <string name="settings_fairness_net">Netto</string>
+    <string name="settings_fairness_disposable">Frei verfügbar</string>
+    <string name="settings_fairness_hint">„Frei verfügbar“ zieht private Fixkosten vom Netto ab.</string>
+    <string name="settings_fixed_share">Fester Anteil: Du %1$d % · %2$s %3$d %</string>
+    <string name="settings_joint_account">Gemeinschaftskonto</string>
+    <string name="settings_joint_account_hint">Ihr zahlt gemeinsame Kosten von einem gemeinsamen Konto.</string>
+    <string name="settings_edit_income">Einkommen bearbeiten</string>
+    <string name="settings_invite">Partner einladen</string>
+    <!-- Fehler -->
+    <string name="error_invite_invalid">Dieser Code ist ungültig oder abgelaufen. Bitte um einen neuen.</string>
+    <string name="error_already_member">Du gehörst bereits zu einem Haushalt.</string>
+    <string name="error_household_full">Dieser Haushalt hat schon zwei Mitglieder.</string>
+    <string name="error_not_member">Du gehörst nicht zu diesem Haushalt.</string>
+    <string name="error_no_household">Kein Haushalt gefunden.</string>
+    <string name="error_network">Keine Verbindung. Bitte prüfe dein Internet.</string>
+    <string name="error_not_configured">Supabase ist noch nicht eingerichtet.</string>
+    <string name="error_unknown">Etwas ist schiefgelaufen. Bitte versuche es erneut.</string>
+    <string name="error_retry">Erneut versuchen</string>
+
+    <!-- ===== Plattform ===== -->
+    <string name="join_scan_hint_camera">Tipp: Scanne den QR-Code einfach mit der Kamera-App deines iPhones – Paarfinanz öffnet sich dann mit dem richtigen Code.</string>
+</resources>

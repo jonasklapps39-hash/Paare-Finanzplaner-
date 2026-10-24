@@ -24,7 +24,4 @@ rootProject.name = "Paarfinanz"
 
 include(":app")
 include(":core:domain")
-include(":core:data")
-include(":core:ui")
-include(":feature:auth")
-include(":feature:household")
+include(":shared")

@@ -4,8 +4,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.hilt)
-    alias(libs.plugins.ksp)
 }
 
 android {
@@ -16,8 +14,8 @@ android {
         applicationId = "de.paarfinanz.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 2
+        versionName = "0.2.0"
     }
 
     buildTypes {
@@ -35,7 +33,6 @@ android {
 
     buildFeatures {
         compose = true
-        buildConfig = true
     }
 
     packaging {
@@ -53,22 +50,12 @@ kotlin {
 }
 
 dependencies {
-    implementation(project(":core:domain"))
-    implementation(project(":core:data"))
-    implementation(project(":core:ui"))
-    implementation(project(":feature:auth"))
-    implementation(project(":feature:household"))
+    implementation(project(":shared"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.lifecycle.runtime.compose)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.navigation.compose)
-
-    implementation(libs.hilt.android)
-    implementation(libs.hilt.navigation.compose)
-    ksp(libs.hilt.compiler)
-
-    debugImplementation(libs.compose.ui.tooling)
-    testImplementation(libs.junit)
+    implementation(project.dependencies.platform(libs.koin.bom))
+    implementation(libs.koin.android)
+    implementation(project.dependencies.platform(libs.supabase.bom))
+    implementation(libs.supabase.auth)
 }

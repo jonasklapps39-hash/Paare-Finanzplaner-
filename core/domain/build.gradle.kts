@@ -1,21 +1,24 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    alias(libs.plugins.kotlin.jvm)
-}
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    alias(libs.plugins.kotlin.multiplatform)
 }
 
 kotlin {
-    compilerOptions {
-        jvmTarget.set(JvmTarget.JVM_17)
+    // Reine Logik ohne Plattform-Abhängigkeiten: JVM (auch für Android) und iOS.
+    jvm {
+        compilerOptions { jvmTarget.set(JvmTarget.JVM_17) }
     }
-}
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
 
-dependencies {
-    testImplementation(libs.kotlin.test)
-    testImplementation(libs.junit)
+    sourceSets {
+        commonMain.dependencies {
+            api(libs.kotlinx.datetime)
+        }
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+        }
+    }
 }

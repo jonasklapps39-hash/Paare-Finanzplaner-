@@ -16,3 +16,10 @@ local.properties
 .env
 supabase/.temp/
 supabase/.branches/
+
+# iOS (Xcode-Projekt wird aus iosApp/project.yml erzeugt)
+iosApp/iosApp.xcodeproj/
+iosApp/iosApp/Info.plist
+xcuserdata/
+DerivedData/
+*.xcworkspace/xcuserdata/

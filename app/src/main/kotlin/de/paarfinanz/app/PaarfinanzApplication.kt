@@ -1,7 +1,13 @@
 package de.paarfinanz.app
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
+import de.paarfinanz.app.di.initKoin
+import org.koin.android.ext.koin.androidContext
 
-@HiltAndroidApp
-class PaarfinanzApplication : Application()
+class PaarfinanzApplication : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+        initKoin { androidContext(this@PaarfinanzApplication) }
+    }
+}

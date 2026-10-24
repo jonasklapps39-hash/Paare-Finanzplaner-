@@ -10,3 +10,6 @@
 # Ktor / OkHttp
 -dontwarn org.slf4j.**
 -dontwarn java.lang.management.**
+
+# Koin (Reflection-frei, aber ViewModel-Konstruktoren behalten)
+-keep class de.paarfinanz.**.*ViewModel { <init>(...); }
